@@ -2,16 +2,15 @@ import { Queue } from "./Queue";
 import { expect, test } from "vitest";
 const queue = new Queue();
 
-queue.enqueue("juan");
-queue.enqueue("juan carlos");
-queue.enqueue("oriana");
 
-// console.log(queue.peek());
-// console.log(queue.dequeue());
-// console.log(queue.peek());
+test("isEmpty ", () => {
+  expect(queue.isEmpty()).toEqual(true);
+});
 
-// console.log(queue.size());
-// console.log(queue.isEmpty());
+test("enqueue ", () => {
+  queue.enqueue("juan");
+  expect(queue.size()).toEqual(1);
+});
 
 test("peek ", () => {
   expect(queue.peek()).toBe("juan");
